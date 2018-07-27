@@ -1,0 +1,188 @@
+
+1.
+
+rpm -qa|grep yum|xargs rpm -e --nodeps
+
+rpm -e  python-urlgrabber
+
+
+
+
+
+shoul
+
+
+
+2.
+
+wget  http://mirrors.163.com/centos/7/os/x86_64/Packages/ 下载所需文件，所需的文件为：
+
+
+
+
+=======================================================================
+
+wget  http://mirrors.163.com/centos/7/os/x86_64/Packages/rpm-4.11.3-32.el7.x86_64.rpm       
+
+wget  http://mirrors.163.com/centos/7/os/x86_64/Packages/yum-metadata-parser-1.1.4-10.el7.x86_64.rpm  
+
+
+wget  http://mirrors.163.com/centos/7/os/x86_64/Packages/python-urlgrabber-3.10-8.el7.noarch.rpm 
+
+wget  http://mirrors.163.com/centos/7/os/x86_64/Packages/yum-3.4.3-158.el7.centos.noarch.rpm 
+
+wget  http://mirrors.163.com/centos/7/os/x86_64/Packages/yum-plugin-fastestmirror-1.1.31-45.el7.noarch.rpm
+
+
+
+wget  http://mirrors.163.com/centos/7/os/x86_64/Packages/yum-updateonboot-1.1.31-45.el7.noarch.rpm  
+
+wget  http://mirrors.163.com/centos/7/os/x86_64/Packages/yum-utils-1.1.31-45.el7.noarch.rpm  
+
+
+
+=======================================================================
+
+
+
+
+
+wget  http://mirrors.163.com/centos/7/os/x86_64/Packages/libreoffice-sdk-doc-5.3.6.1-10.el7.x86_64.rpm  
+
+
+
+
+
+
+
+ ip addr del 192.168.1.118  dev eno16777736
+
+
+
+route add default gw  172.16.100.254
+
+
+
+
+
+
+route del default gw  172.16.100.254
+
+route del default gw  192.168.1.99
+
+
+s
+
+3.
+
+rpm -ivh  rpm-4.11.3-32.el7.x86_64.rpm       
+
+
+rpm -ivh  yum-metadata-parser-1.1.4-10.el7.x86_64.rpm  
+
+
+rpm -ivh  python-urlgrabber-3.10-8.el7.noarch.rpm 
+
+
+rpm -ivh  yum-3.4.3-158.el7.centos.noarch.rpm    yum-plugin-fastestmirror-1.1.31-45.el7.noarch.rpm
+
+rpm -ivh  yum-updateonboot-1.1.31-45.el7.noarch.rpm    yum-utils-1.1.31-45.el7.noarch.rpm  
+
+
+
+
+============================================================================
+
+
+[root@rhel72 111]# 
+[root@rhel72 111]# rpm -ivh  rpm-4.11.3-32.el7.x86_64.rpm       
+warning: rpm-4.11.3-32.el7.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID f4a80eb5: NOKEY
+Preparing...                          ################################# [100%]
+        package rpm-4.11.3-32.el7.x86_64 is already installed
+[root@rhel72 111]# 
+[root@rhel72 111]# 
+[root@rhel72 111]# 
+[root@rhel72 111]# rpm -ivh  yum-metadata-parser-1.1.4-10.el7.x86_64.rpm  
+warning: yum-metadata-parser-1.1.4-10.el7.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID f4a80eb5: NOKEY
+Preparing...                          ################################# [100%]
+        package yum-metadata-parser-1.1.4-10.el7.x86_64 is already installed
+[root@rhel72 111]# 
+[root@rhel72 111]# 
+[root@rhel72 111]# rpm -ivh  yum-plugin-fastestmirror-1.1.31-45.el7.noarch.rpm
+warning: yum-plugin-fastestmirror-1.1.31-45.el7.noarch.rpm: Header V3 RSA/SHA256 Signature, key ID f4a80eb5: NOKEY
+error: Failed dependencies:
+        yum >= 3.0 is needed by yum-plugin-fastestmirror-1.1.31-45.el7.noarch
+[root@rhel72 111]# 
+[root@rhel72 111]# 
+[root@rhel72 111]# 
+[root@rhel72 111]# rpm -ivh  python-urlgrabber-3.10-8.el7.noarch.rpm 
+warning: python-urlgrabber-3.10-8.el7.noarch.rpm: Header V3 RSA/SHA256 Signature, key ID f4a80eb5: NOKEY
+Preparing...                          ################################# [100%]
+        file /usr/lib/python2.7/site-packages/urlgrabber/grabber.py from install of python-urlgrabber-3.10-8.el7.noarch conflicts with file from package python-urlgrabber-3.10-7.el7.noarch
+        file /usr/lib/python2.7/site-packages/urlgrabber/grabber.pyc from install of python-urlgrabber-3.10-8.el7.noarch conflicts with file from package python-urlgrabber-3.10-7.el7.noarch
+        file /usr/lib/python2.7/site-packages/urlgrabber/grabber.pyo from install of python-urlgrabber-3.10-8.el7.noarch conflicts with file from package python-urlgrabber-3.10-7.el7.noarch
+[root@rhel72 111]# 
+[root@rhel72 111]# 
+[root@rhel72 111]# rpm -qa |grep  python-urlgrabber
+python-urlgrabber-3.10-7.el7.noarch
+[root@rhel72 111]# rpm -e  python-urlgrabber
+[root@rhel72 111]# 
+[root@rhel72 111]# 
+[root@rhel72 111]# rpm -ivh  python-urlgrabber-3.10-8.el7.noarch.rpm 
+warning: python-urlgrabber-3.10-8.el7.noarch.rpm: Header V3 RSA/SHA256 Signature, key ID f4a80eb5: NOKEY
+Preparing...                          ################################# [100%]
+Updating / installing...
+   1:python-urlgrabber-3.10-8.el7     ################################# [100%]
+[root@rhel72 111]# 
+[root@rhel72 111]# 
+[root@rhel72 111]# 
+[root@rhel72 111]# 
+[root@rhel72 111]# 
+[root@rhel72 111]# rpm -ivh  yum-3.4.3-158.el7.centos.noarch.rpm    yum-plugin-fastestmirror-1.1.31-45.el7.noarch.rpm
+warning: yum-3.4.3-158.el7.centos.noarch.rpm: Header V3 RSA/SHA256 Signature, key ID f4a80eb5: NOKEY
+Preparing...                          ################################# [100%]
+Updating / installing...
+   1:yum-plugin-fastestmirror-1.1.31-4################################# [ 50%]
+   2:yum-3.4.3-158.el7.centos         ################################# [100%]
+[root@rhel72 111]# 
+
+
+
+4.
+
+wget http://mirrors.163.com/.help/CentOS7-Base-163.repo
+
+
+:1,$s/$releasever/7/g
+
+
+ 5.完成
+    
+    
+    
+此时，yum源就基本更改完成，然后执行：
+
+yum clean all
+yum makecache
+
+清除原缓存，建立新缓存。可以执行
+
+yum update
+
+更新软件并测试yum源的可用性，执行：
+
+yum repolist all
+
+
+
+
+[root@rhel72 yum.repos.d]# yum list openssl
+
+
+root@rhel72 yum.repos.d]# yum install openssl
+
+
+[root@rhel72 yum.repos.d]# yum install zip  -y
+
+
+http://www.ex-parrot.com/pdw/iftop/download/iftop-1.0pre4.tar.gz
